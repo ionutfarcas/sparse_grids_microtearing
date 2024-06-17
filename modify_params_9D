@@ -1,0 +1,108 @@
+#!/usr/bin/perl
+
+use strict;
+use warnings qw(all);
+
+if ($#ARGV <= 1 ) 
+{
+	print "Error!\nUsage: ./modify_params 9 params\n";
+	exit;
+}
+
+my $file = $ARGV[0];
+
+my $out_dir     = $ARGV[1];
+my $shat        = $ARGV[2];
+my $coll        = $ARGV[3];
+my $amhd        = $ARGV[4];
+my $q0          = $ARGV[5];
+my $beta        = $ARGV[6];
+my $temp_i      = $ARGV[7];
+my $omn         = $ARGV[8];
+my $omt_i       = $ARGV[9];
+my $omt_e       = $ARGV[10];
+
+
+my $out_dir_line = 27;
+
+my $shat_line     = 106;
+my $coll_line     = 58;
+my $amhd_line     = 111;
+my $q0_line       = 105;
+my $beta_line     = 55;
+my $temp_i_line   = 74;
+my $temp_C_line   = 97;
+my $omn_i_line    = 71;
+my $omn_e_line    = 82;
+my $omn_C_line    = 93;
+my $omt_i_line    = 72;
+my $omt_e_line    = 83;
+my $omt_C_line    = 94;
+
+ 
+@ARGV = ($file);
+$^I = "";
+
+while (<>)
+{   
+    if ($. == $out_dir_line) 
+    {
+        print "diagdir = $out_dir \n";
+    }
+    elsif ($. == $shat_line) 
+    {
+        print "shat = $shat \n";
+    }
+    elsif ($. == $coll_line) 
+    {
+        print "coll = $coll \n";
+    }
+    elsif ($. == $amhd_line) 
+    {
+        print "amhd = $amhd \n";
+    }
+    elsif ($. == $q0_line) 
+    {
+        print "q0 = $q0 \n";
+    }
+    elsif ($. == $beta_line) 
+    {
+        print "beta = $beta \n";
+    }
+    elsif ($. == $temp_i_line) 
+    {
+        print "temp = $temp_i \n";
+    }
+    elsif ($. == $temp_C_line) 
+    {
+        print "temp = $temp_i \n";
+    }
+    elsif ($. == $omn_i_line) 
+    {
+        print "omn = $omn \n";
+    }
+    elsif ($. == $omn_e_line) 
+    {
+        print "omn = $omn \n";
+    }
+    elsif ($. == $omn_C_line) 
+    {
+        print "omn = $omn \n";
+    }
+    elsif ($. == $omt_i_line) 
+    {
+        print "omt = $omt_i \n";
+    }
+    elsif ($. == $omt_e_line) 
+    {
+        print "omt = $omt_e \n";
+    }
+    elsif ($. == $omt_C_line) 
+    {
+        print "omt = $omt_i \n";
+    }
+    else
+    {   
+    	print;
+    }
+}
